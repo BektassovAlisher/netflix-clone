@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './CSS/Banner.css'
-import axios from 'axios';
+import axios from './axios';
 import requests from './Requests';
 
 function Banner() {
@@ -8,7 +8,7 @@ function Banner() {
 
   useEffect(() => {
       async function fetchData() {
-          const request =  await axios.get(requests.fetchTrending);
+          const request =  await axios.get(requests.fetchNetflixOriginals);
           setMovie( 
               request.data.results[
               Math.floor(Math.random() * request.data.results.length - 1)
@@ -27,17 +27,21 @@ function Banner() {
     className='banner'
      style={{
         backgroundSize: "cover", 
-        backgroundImage: `url("https://w0.peakpx.com/wallpaper/896/738/HD-wallpaper-black-banner.jpg")`,
+        backgroundImage: `url(
+          "https://image.tmdb.org/t/p/original/${movie?.backdrop_path}"
+     )`,
         backgroundPosition: "center center",
       }}>
 
         <div className='banner_contents'>
-          <h1 className='banner-title'>Movie Name</h1>
+          <h1 className='banner-title'>
+            {movie?.title || movie?.name || movie?.original_name}
+          </h1>
           <div className='banner_bttons'>
             <button className='banner_button'>Play</button>
             <button className='banner_button'>My List</button>
           </div>
-          <h1 className='banner-description'>{truncate(`This is a test descr`, 100)}</h1>
+          <h1 className='banner-description'>{truncate(movie?.overview, 150)}</h1>
         </div>
 
         <div className='banner-fadebottom'/>
