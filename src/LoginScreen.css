@@ -100,7 +100,7 @@
 }
 
 .loginScreen__getStarted { /* Это кнопка "GET STARTED" */
-  padding: 16.7px 20px; /* Оставляем оригинальный паддинг */
+  padding: 16px 20px; /* Оставляем оригинальный паддинг */
   font-size: 1rem;
   color: #fff;
   background-color: #e50914;
