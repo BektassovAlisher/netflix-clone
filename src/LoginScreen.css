@@ -1,0 +1,114 @@
+.loginScreen {
+
+  position: relative;
+  
+  height: 100%;
+  
+  background: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f562aaf4-5dbb-4603-a32b-6ef6c2230136/dh0w8qv-9d8ee6b2-b41a-4681-ab9b-8a227560dc75.jpg/v1/fill/w_1192,h_670,q_70,strp/the_netflix_login_background__canada__2024___by_logofeveryt_dh0w8qv-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvZjU2MmFhZjQtNWRiYi00NjAzLWEzMmItNmVmNmMyMjMwMTM2XC9kaDB3OHF2LTlkOGVlNmIyLWI0MWEtNDY4MS1hYjliLThhMjI3NTYwZGM3NS5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.LOYKSxIDqfPwWHR0SSJ-ugGQ6bECF0yO6Cmc0F26CQs")
+  
+  center no-repeat;
+  
+  background-size: cover;
+  
+  }
+
+.loginScreen__logo {
+  position: fixed;
+  left: 0;
+  width: 150px;
+  object-fit: contain;
+  padding-left: 20px;
+  top: 20px; 
+  z-index: 10; 
+}
+
+.loginScreen__button { 
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #e50914;
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+  z-index: 10; 
+}
+
+.loginScreen__gradient {
+  width: 100%;
+  z-index: 1;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0,
+    rgba(0, 0, 0, 0) 60%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+}
+
+.loginScreen__body {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  top: 30%;
+  z-index: 1;
+  color: #fff;
+  padding: 20px;
+  left: 0;
+  right: 0;
+}
+
+.loginScreen__body > h1 {
+  font-size: 3.125rem;
+  margin-bottom: 20px;
+}
+
+.loginScreen__body > h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+.loginScreen__body > h3 {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.loginScreen__input {
+  margin: 20px;
+}
+
+/* --- ИСПРАВЛЕНИЯ НАЧИНАЮТСЯ ЗДЕСЬ --- */
+
+.loginScreen__input > form {
+  display: flex;          /* Включаем Flexbox */
+  align-items: center;    /* Выравниваем инпут и кнопку по вертикальному центру */
+  justify-content: center; /* Центрируем группу инпут+кнопка горизонтально */
+}
+
+.loginScreen__input > form > input {
+  padding: 10px;
+  outline-width: 0;
+  height: 51.7px; /* Высота подобрана под паддинг кнопки (15.35*2) + размер шрифта. Можно оставить 30px + паддинг, если align-items: center достаточно */
+  width: 30%;
+  border: none;
+  max-width: 600px;
+  box-sizing: border-box; /* Включаем padding и border в расчет высоты */
+}
+
+.loginScreen__getStarted { /* Это кнопка "GET STARTED" */
+  padding: 16.7px 20px; /* Оставляем оригинальный паддинг */
+  font-size: 1rem;
+  color: #fff;
+  background-color: #e50914;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  box-sizing: border-box; /* Включаем padding и border в расчет высоты */
+  /* Добавляем небольшой отступ слева от кнопки */
+  /* Высота кнопки будет определяться паддингом и размером шрифта */
+}
+
